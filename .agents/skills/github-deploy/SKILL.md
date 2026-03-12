@@ -1,25 +1,28 @@
 ---
 name: github-deploy
-description: 一鍵將本地資料夾部署至 GitHub Pages 的專業工具
+description: 多專案一鍵部署工具 - 將資料夾同步至 GitHub Pages 
 ---
 
-# GitHub 部署 Skill
+# GitHub 部署 Skill (多專案架構)
 
-本 Skill 專為 `sammywebtool` 專案設計。您可以重複使用同一個儲存庫來存放不同版本的檔案。
+本 Skill 支援在單一儲存庫 `sammywebtool` 中管理多個子專案。
 
-## 核心工作流
+## 專案目錄結構建議
+為了方便管理，建議在 `D:\21.Anti\sammywebtool` 下建立子資料夾：
+- `D:\21.Anti\sammywebtool\index.html` (主入口網頁)
+- `D:\21.Anti\sammywebtool\project-1\` (專案 1 檔案夾)
+- `D:\21.Anti\sammywebtool\project-2\` (專案 2 檔案夾)
 
-### 1. 部署至通用儲存庫
-當用戶希望更新 `D:\21.Anti\sammywebtool` 內容時：
-- 切換至目錄。
-- 檢查 `.git` 是否指向儲存庫。
-- 執行 `git add .`, `git commit -m "Update"`, `git push origin main`。
+## 網址存取規則
+部署後，您的網址將自動對應：
+- 主頁面：`https://sammyshie.github.io/sammywebtool/`
+- 專案 1：`https://sammyshie.github.io/sammywebtool/project-1/`
+- 專案 2：`https://sammyshie.github.io/sammywebtool/project-2/`
 
-## 用戶資訊與設定
-- **工作目錄**: `D:\21.Anti\sammywebtool`
-- **儲存庫網址**: [https://github.com/sammyshie/sammywebtool](https://github.com/sammyshie/sammywebtool)
-- **預設分支**: `main`
+## 關於 index.html
+- **重要**：每個資料夾內的「入口網頁」都建議命名為 `index.html`。
+- 如果命名為 `app.html`，網址則需變成 `.../project-1/app.html`。
 
-## 快速指令建議
-- 「部署 sammywebtool 網頁」
-- 「更新 sammywebtool 內容」
+## 快速指令
+- **「部署整體更新」**：將資料夾內所有異動同步至 GitHub。
+- **「將 [資料夾名] 部署為新專案」**：我會協助您建立子資料夾並完成推送。
